@@ -14,7 +14,7 @@ public class Question {
 		FileReader file = null;
 		BufferedReader buffer = null;
 		
-		file = new FileReader("Questions.txt");  
+		file = new FileReader("src\\OOP_Assignment2_Survey\\Questions.txt");  
 		buffer = new BufferedReader(file); 
 		
 		ques = new ArrayList<String>(); 

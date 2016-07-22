@@ -15,7 +15,7 @@ public class Multi_Select_Answers {
 		String answer = scannerObject.nextLine();;
 		String[] answers = answer.split("/");
 		for(int index=0 ; index<answers.length ; index++) {
-			options[index] = options[index].trim();
+			answers[index] = answers[index].trim();
 		}
 		for(int index=0 ; index<answers.length ; index++) {
 			
@@ -34,6 +34,25 @@ public class Multi_Select_Answers {
 				answer = multi_Select(optionsList);
 			}
 		}
+		
+		Boolean flag = true;
+outer:	for(int index=0 ; index<answers.length ; index++) {
+				
+			for(int index2=index+1 ; index2<answers.length ; index2++) {
+				
+				if(answers[index].equalsIgnoreCase(answers[index2])) {
+					
+					flag = false;
+					break outer;
+				}
+			}
+		}
+		if(flag == false) {
+				
+			System.out.print("Please enter an answer only one time.");
+			answer = multi_Select(optionsList);
+		}
+		
 		//scannerObject.close();
 		return answer;
 	}
