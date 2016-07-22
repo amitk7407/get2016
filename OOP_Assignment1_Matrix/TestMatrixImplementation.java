@@ -1,4 +1,4 @@
-package OOP_Assignment1;
+package OOP_Assignment1_Matrix;
 
 import static org.junit.Assert.assertArrayEquals;
 

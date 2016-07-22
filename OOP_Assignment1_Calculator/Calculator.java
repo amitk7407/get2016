@@ -39,12 +39,12 @@ public class Calculator implements ActionListener{
 	}
 		
 	public Digits[] getDigits() {
-		//sending the reference for 
+		//gets all the digits from the user and store in the array of type Digits
 		return digit;
 	}
 	
 	public Operator[] getOperators() {
-		//sending the reference for 
+		//gets all the operators from the user and store in the array of type Operators 
 		return operator;
 	}
 	

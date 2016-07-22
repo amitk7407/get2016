@@ -15,7 +15,7 @@
  *  date 19-07-2016
  *  
  */
-package OOP_Assignment1;
+package OOP_Assignment1_Matrix;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -121,8 +121,8 @@ public class MatrixImplementation {
 		MatrixImplementation matrixObject = new MatrixImplementation();
 		Scanner scannerObject =new Scanner(System.in);
 		int[][] result = null;
-	//	while(true) {
-			try {
+		try {
+			while(true) {
 				
 				System.out.println("Enter 1 for entering a matrix");
 				System.out.println("Enter 2 for transposing a matrix");
@@ -197,21 +197,24 @@ public class MatrixImplementation {
 							matrixObject.showMatrix(result);
 						}
 						break;
+
+					default:
+						System.out.println("Choice invalid!");
+						System.out.println("Please enter from the given choices");
 				}
+			}		
+		} catch(InputMismatchException exp) {
 			
-			} catch(InputMismatchException exp) {
+			System.out.print("Please enter the integer dimensions");
+		} catch(ArrayIndexOutOfBoundsException exp) {
 				
-				System.out.print("Please enter the integer dimensions");
-			} catch(ArrayIndexOutOfBoundsException exp) {
-				
-				System.out.print("Please enter the dimensions greater than zero");
-			} catch(Exception exp) {
-			
-				exp.printStackTrace();
-			} finally {
-			
-				scannerObject.close();
-			}
-	//	}
+			System.out.print("Please enter the dimensions greater than zero");
+		} catch(Exception exp) {
+		
+			exp.printStackTrace();
+		} finally {
+		
+			scannerObject.close();
+		}
 	}
 }
