@@ -27,16 +27,16 @@ public class Read_Questions_From_A_File implements Read_Questions_Interface {
 				questionParts[index] = questionParts[index].trim();
 			}
 				
-			if(questionParts[1].equals("Single Select")) {
+			if(questionParts[1].equalsIgnoreCase("Single Select")) {
 				
 				Single_Select_Answers singleSelect = new Single_Select_Answers();
 				answers.add(singleSelect.single_Select(questionParts[2]));
 				
-			} else if(questionParts[1].equals("Multi Select")) {
+			} else if(questionParts[1].equalsIgnoreCase("Multi Select")) {
 				
 				Multi_Select_Answers multiSelect = new Multi_Select_Answers();
 				answers.add(multiSelect.multi_Select(questionParts[2]));					
-			} else if(questionParts[1].equals("Text")) {
+			} else if(questionParts[1].equalsIgnoreCase("Text")) {
 					
 				Text_Answer textSelect = new Text_Answer();
 				answers.add(textSelect.text_Select());					

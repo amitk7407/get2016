@@ -16,20 +16,26 @@ public class Survey {
 		System.out.print("Please enter the number of participants who gonna take part in the survey");
 		Scanner scannerObject = new Scanner(System.in);
 		int noOfParticipant = scannerObject.nextInt();
-		FileWriter fileWriter = new FileWriter("Answers.txt");
+		if(noOfParticipant <= 0)
+		{
+			System.out.println("Please enter the number greater than 0.");
+			survey();
+		} else {
+			FileWriter fileWriter = new FileWriter("Answers.txt");
 		
-		List<String> questionslist = new ArrayList<String>();
+			List<String> questionslist = new ArrayList<String>();
 		
-		for(int index=0 ; index<noOfParticipant ; index++) {
+			for(int index=0 ; index<noOfParticipant ; index++) {
 			
-			Read_Questions_From_A_File read = new Read_Questions_From_A_File();
-			int participantNo = index+1;
-			questionslist = read.read_Questions(participantNo);
+				Read_Questions_From_A_File read = new Read_Questions_From_A_File();
+				int participantNo = index+1;
+				questionslist = read.read_Questions(participantNo);
+			}
+			System.out.println("The Survey is completed.");
+			print_Distribution(questionslist);
+			scannerObject.close();
+			fileWriter.close();
 		}
-		System.out.println("The Survey is completed.");
-		print_Distribution(questionslist);
-		scannerObject.close();
-		fileWriter.close();
 	}
 	
 	void print_Distribution(List<String> questionList) throws IOException, FileNotFoundException {
