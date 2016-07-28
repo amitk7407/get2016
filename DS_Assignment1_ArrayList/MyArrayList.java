@@ -15,15 +15,14 @@ public class MyArrayList<T> {
 	private static final int NUM2 = 2;
 	private static final int NUM3 = 3;
 	
-	private Object[] arrayList;
+	private Object[] arrayList = new Object[DEFAULT_SIZE];
 	private int actual_size = 0;
 	
 	/**
-	 * unparameterized constructor to initialize the array
+	 * unparameterized constructor
 	 */
 	public MyArrayList() {
 		
-		arrayList = new Object[DEFAULT_SIZE];
 	}
 	
 	/**
@@ -158,7 +157,8 @@ public class MyArrayList<T> {
 	public boolean remove(Object o) {
 		
 		int index = getIndex(o);
-		return remove(index);
+		remove(index);
+		return true;
 	}
 	
 	/**
@@ -187,7 +187,7 @@ public class MyArrayList<T> {
 	 * method to reverse the array
 	 * @return : reversed array
 	 */
-	public Object[] reverse() {
+	public void reverse() {
 		
 		Object[] obj = new Object[arrayList.length];
 		for(int index1=ZERO, index2=actual_size-NUM1 ; index1<actual_size ; index1++, index2--) {
@@ -195,7 +195,6 @@ public class MyArrayList<T> {
 			obj[index1] = arrayList[index2];
 		}
 		arrayList = copy(obj, obj.length);
-		return arrayList;
 	}
 	
 	/**

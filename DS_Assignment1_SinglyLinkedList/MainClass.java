@@ -28,11 +28,15 @@ public class MainClass {
 			System.out.println();
 			list.print();
 			
-			//list.get("Amit1");
-			//System.out.println();
-			//list.print();
+			System.out.println();
+			String value = list.get(0);
+			System.out.println(value);
+			System.out.println();
+			list.print();
 			
-			
+			System.out.println();
+			list.reverse();	
+			list.print();
 			
 		} catch(ArrayIndexOutOfBoundsException exp) {
 			
