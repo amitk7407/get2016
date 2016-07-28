@@ -1,0 +1,4 @@
+amit$individual$1234567890$jaipur$simran, noor, vaibhav
+simran$individual$1234567890$jaipur$amit, noor
+noor$organization$1234567890$jaipur$simran, amit
+vaibhav$individual$123456790$jaipur$amit
