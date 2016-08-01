@@ -1,10 +1,6 @@
-package DS_Assignment1_SinglyLinkedList;
+package DS_Assignment1_DoublyLinkedList;
 
-/**
- *class to create a Singly linked list and perform operations in it 
- * @param <T> : generic type of object
- */
-public class MySinglyLinkedList<T> {
+public class MyDoublyLinkedList<T> {
 
 	private Node<T> startNode;
 	private int actual_size = 0;
@@ -12,7 +8,7 @@ public class MySinglyLinkedList<T> {
 	/**
 	 * unparameterized constructor to initialize a node
 	 */
-	public MySinglyLinkedList() {
+	public MyDoublyLinkedList() {
 		
 		startNode = null;
 	}
@@ -21,7 +17,7 @@ public class MySinglyLinkedList<T> {
 	 * parameterized constructor to create a node with the given value
 	 * @param value : value of the node
 	 */
-	public MySinglyLinkedList(T value) {
+	public MyDoublyLinkedList(T value) {
 		
 		startNode.value = value;
 	}
@@ -42,11 +38,12 @@ public class MySinglyLinkedList<T> {
 		else{
 
 			Node<T> temp = startNode;
-			while(temp.next != null) {
+			while(temp.rear != null) {
 
-				temp = temp.next;
+				temp = temp.rear;
 			}
-			temp.next = newNode;
+			temp.rear = newNode;
+			newNode.front = temp;
 			actual_size++;
 		}
 		return true;
@@ -65,9 +62,14 @@ public class MySinglyLinkedList<T> {
 			throw new ArrayIndexOutOfBoundsException();
 		}
 		Node<T> newNode = new Node<T>(value);
-		if(index == 0){
+		if(index == 0 && startNode == null){
+		
+			startNode = newNode;
+			actual_size++;
+		} else if(index == 0) {
 
-			newNode.next = startNode;
+			newNode.rear = startNode;
+			startNode.front = newNode;
 			startNode = newNode;
 			actual_size++;
 		}
@@ -76,11 +78,19 @@ public class MySinglyLinkedList<T> {
 			int count = 0;
 			while(count != index-1) {
 
-				temp = temp.next;
+				temp = temp.rear;
 				count++;
 			}
-			newNode.next = temp.next;
-			temp.next = newNode;
+			if(temp.rear == null) {
+			
+				temp.rear = newNode;
+				newNode.front = temp;
+			} else {
+				newNode.rear = temp.rear;
+				temp.rear = newNode;
+				newNode.front = temp;
+				newNode.rear.front = newNode;
+			}
 			actual_size++;
 		}
 		return true;
@@ -93,25 +103,31 @@ public class MySinglyLinkedList<T> {
 	 */
 	public boolean removeNode(T value) {
 
-		Node<T> prevNode = startNode;
 		Node<T> currentNode = startNode;
 		
 		if(currentNode.value.equals(value)){
 
-			startNode = currentNode.next;
+			startNode = currentNode.rear;
+			startNode.front = null;
 			currentNode = null;
 		} else{
-			while(!currentNode.value.equals(value) && currentNode.next != null) {
+			while(!currentNode.value.equals(value) && currentNode.rear != null) {
 
-				prevNode = currentNode;
-				currentNode  = prevNode.next;	
+				currentNode  = currentNode.rear;	
 			}
-			if(!currentNode.value.equals(value) && currentNode.next == null) {
+			if(!currentNode.value.equals(value) && currentNode.rear == null) {
 				
 				throw new NullPointerException();
 			}
-			prevNode.next = currentNode.next;
-			currentNode = null;
+			currentNode.front.rear = currentNode.rear;
+			if(currentNode.rear == null) {
+			
+				currentNode = null;
+			} else {
+				
+				currentNode.rear.front = currentNode.front;
+				currentNode = null;
+			}
 		}
 		actual_size--;
 		return true;
@@ -122,34 +138,39 @@ public class MySinglyLinkedList<T> {
 	 * @param index : location from which the node is to be deleted
 	 * @return : boolean
 	 */
-	public T removeNode(int index) {
+	public boolean removeNode(int index) {
 
-		T value;
 		if(actual_size <= index || index < 0) {
 
 			throw new ArrayIndexOutOfBoundsException();
 		}
 		if(index == 0){
 
-			value = startNode.value;
-			startNode = startNode.next;
+			startNode = startNode.rear;
+			startNode.front = null;
 		}
 		else{
-			Node<T> prevNode = startNode;
-			Node<T> nextNode = startNode.next;
+			
+			Node<T> currentNode = startNode;
 			int count = 0;
-			while(count != index-1) {
+			while(count != index) {
 
-				prevNode = prevNode.next;
-				nextNode = nextNode.next;
+				currentNode = currentNode.rear;
 				count++;
 			}
-			prevNode.next = nextNode.next;
-			value = nextNode.value;
-			nextNode = null;
+			if(currentNode.rear != null) {
+			
+				currentNode.rear.front = currentNode.front;
+				currentNode.front.rear = currentNode.rear;
+				currentNode = null;
+			} else {
+				
+				currentNode.front.rear = null;
+				currentNode = null;
+			}
 		}
 		actual_size--;
-		return value;
+		return true;
 	}
 
 	/**
@@ -169,14 +190,14 @@ public class MySinglyLinkedList<T> {
 		}
 		else{
 
-			Node<T> temp = startNode;
+			Node<T> currentNode = startNode;
 			int count = 0;
-			while(count != index-1) {
+			while(count != index) {
 
-				temp = temp.next;
+				currentNode = currentNode.rear;
 				count++;
 			}
-			return temp.next.value;
+			return currentNode.value;
 		}
 	}
 
@@ -185,18 +206,18 @@ public class MySinglyLinkedList<T> {
 	 */
 	public void reverse() {
 
-		Node<T> prev = null;
 		Node<T> next = null;
 		Node<T> current = startNode;
-		while(current.next != null) {
-
-			next = current.next;
-			current.next = prev;
-			prev = current;
-			current = next;
+		while (current != null) {
+            next = current.front;
+            current.front = current.rear;
+            current.rear = next;
+            current = current.front;
+        }
+		if(next != null) {
+		
+			startNode = next.front;
 		}
-		current.next = prev;
-		startNode = current;
 	}
 
 	/**
@@ -209,27 +230,7 @@ public class MySinglyLinkedList<T> {
 		while(tempNode != null){
 
 			System.out.println(tempNode.value);
-			tempNode = tempNode.next;
+			tempNode = tempNode.rear;
 		}
-	}
-	
-	/**
-	 * method to check for empty list
-	 */
-	
-	public boolean isEmpty() {
-		
-		if(actual_size == 0) {
-			return true;
-		}
-		return false;
-	}
-	
-	/**
-	 * method to return size of the list
-	 */
-	public int size() {
-		
-		return actual_size;
 	}
 }
