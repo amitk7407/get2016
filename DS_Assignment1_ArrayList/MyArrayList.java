@@ -196,18 +196,4 @@ public class MyArrayList<T> {
 		}
 		arrayList = copy(obj, obj.length);
 	}
-	
-	/**
-	 * method to sort the array
-	 */
-/*	public void sort() {
-		
-		for (int rowIndex=ZERO ; rowIndex<arrayList.length ; rowIndex++) {
-
-			for (int columnIndex=rowIndex+NUM1; columnIndex<arrayList.length ; columnIndex++) {
-				
-			  
-		    }
-		}
-	}*/
 }

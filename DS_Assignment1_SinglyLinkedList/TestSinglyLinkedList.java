@@ -27,14 +27,14 @@ public class TestSinglyLinkedList {
 	@Test(expected = NullPointerException.class)
 	public void testRemoveE() {
 		
-		assertEquals("Success",true,singlyLinkedList.removeNode("1"));
+		assertEquals("Success",true,singlyLinkedList.removeNode("5"));
 		assertEquals("Success",true,singlyLinkedList.removeNode("4"));
 	}
 
 	@Test(expected = ArrayIndexOutOfBoundsException.class)
 	public void testRemoveIndex() {
 		
-		assertEquals("Success",true,singlyLinkedList.removeNode(1));
+		assertEquals("Success","2",singlyLinkedList.removeNode(1));
 	}
 
 	@Test(expected = ArrayIndexOutOfBoundsException.class)

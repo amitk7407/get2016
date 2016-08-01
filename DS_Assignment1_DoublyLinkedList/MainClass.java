@@ -1,4 +1,4 @@
-package DS_Assignment1_SinglyLinkedList;
+package DS_Assignment1_DoublyLinkedList;
 
 
 public class MainClass {
@@ -7,8 +7,8 @@ public class MainClass {
 		
 		try {
 		
-			MySinglyLinkedList<String> list = new MySinglyLinkedList<String>();
-			list.addNode("Amit1");
+			MyDoublyLinkedList<String> list = new MyDoublyLinkedList<String>();
+			list.addNode("Amit7");
 			list.addNode("Amit2");
 			list.addNode("Amit3");
 			list.addNode("Amit4");
@@ -28,7 +28,7 @@ public class MainClass {
 			list.print();
 			
 			System.out.println();
-			String value = list.get(1);
+			String value = list.get(3);
 			System.out.println(value);
 			
 			System.out.println();
