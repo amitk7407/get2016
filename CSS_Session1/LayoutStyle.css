@@ -37,7 +37,6 @@
 }
 
 #body {
-	height: 1000px;
 	width: 95%;
 }
 
@@ -114,6 +113,7 @@
 }
 
 #footer {
+	clear: both;
 	text-align: center;
 	background-color: #758a87;
 	padding: 10px 0px 10px 0px;
