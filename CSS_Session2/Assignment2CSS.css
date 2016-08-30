@@ -1,0 +1,195 @@
+nav {
+	height: 40px;
+	background-color: #11334f;
+}
+
+nav h2 {
+	font-size: 15px;
+	font-weight: normal;
+	color: white;
+}
+
+nav h1 {
+	font-size: 20px;
+	font-weight: normal;
+	color: white;
+	margin: 10px 20px 10px 40px;
+}
+
+nav #left a, #right a {
+	float: left;
+	text-decoration:none;
+	display:inline;
+	margin: 0px 10px 0px 10px;
+}
+
+nav #right {
+	float:right;
+}
+
+#block1 {
+	height: 80vh;
+	position: relative;
+	background-color: #337fcc;
+}
+
+#block1 .block_center {
+	text-align: center;
+	color: white;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+#block1 h1 {
+	text-align: center;
+	font-size: 40px;
+	font-weight: 200;
+	border-width: 5px;
+	padding: 5% 20% 5% 20%;
+	border: solid white;
+}
+
+#block1 article {
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+#block1 .button {
+	padding: 8px 45px 8px 45px;
+	background-color: white;
+	color: #337fcc;
+	font-size: 20px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#block2 {
+	height: 30vh;
+	padding: 40px 20px;
+	position: relative;
+}
+
+#block2 article, #block4 .block_center h3{
+	text-align: center;
+	font-size: 22px;
+	color: #001100;
+	padding-bottom: 30px;
+	font-weight: normal;
+}
+
+#block2 .block_div {
+	width: 25%;
+	float: left;
+}
+
+#block2 .block_div span, h3 {
+	color: #337fcc;
+	font-size: 20px;
+}
+
+#block2 .block_div h4 {
+	font-size: 15px;
+	padding-right: 15px;
+	font-weight: normal;
+}
+
+#block2 .block_center {
+	position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%); 
+}
+
+#block3 {
+	height: 20vh;
+	padding: 40px 40px;
+	background-color: #112233;
+	position: relative;
+}
+
+#block3 #img {
+	padding-top: 20px;
+	text-align: center;
+	width: 40%;
+	float: left;
+}
+
+#block3 #text {
+	width: 60%;
+	float: left;
+}
+
+#block3 #text article {
+	color: #aaddff;
+	font-weight: normal;
+}
+
+#block3 #text h3 {
+	font-size: 22px;
+	color: #77aaff;
+	font-weight: normal;
+}
+
+#block3 .block_center {
+	position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%); 
+}
+
+#block4 {
+	height: 35vh;
+	padding: 40px 40px;
+	position: relative;
+}
+
+#block4 .block_center {
+	position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%); 
+}
+
+#block4 #form {
+	width: 40%;
+	float: left;
+}
+
+#block4 #form label {
+	font-weight: bold;
+}
+
+#block4 #form input[type="text"], input[type="email"], input[type="password"] {
+	width: 95%;
+	border: solid thin grey;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+#block4 #form .submit {
+	padding: 4px 17px 4px 17px;
+	background-color: #337fcc;
+	color: white;
+	font-size: 15px;
+	border-radius: 8px 8px 8px 8px;
+}
+
+#block4 #data{
+	width: 60%;
+	float:left;
+}
+
+#block4 #data article {
+	font-size: 15px;
+}
+
+footer {
+	background-color: #112233;
+	height: 5vh;
+	text-align: center;
+	clear: both;
+}
+
+footer h3 {
+	padding: 5px 2px;
+	color: white;
+	font-weight: normal;
+}
