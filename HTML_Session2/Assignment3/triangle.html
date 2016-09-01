@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Triangle</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="1000" height="700"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "#982068";
+		ctx.beginPath();
+		ctx.moveTo(800,300);
+		ctx.lineTo(700,500);
+		ctx.lineTo(900,500);
+		ctx.closePath();
+		ctx.fill();
+	</script>
+</body>
+</html>

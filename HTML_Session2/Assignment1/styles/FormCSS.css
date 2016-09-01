@@ -1,0 +1,82 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+	background-color: #eeeeee;
+}
+
+.clear {
+	clear: both;
+}
+
+#header {
+	padding: 20px 0 10px 15px;
+	font-size: 25px;
+	color: #444;
+}
+
+#main {
+	width: 70%;
+	margin-left: 25%;
+	padding-top: 10px;
+}
+
+#main .form label{
+	margin: 0 5px;
+}
+
+#main .form .label_name {
+	width: 30%;
+	text-align: right;
+	font-weight: bold;
+	font-size: 18px;
+	float: left;
+	padding-top: 10px;
+}
+
+#main .form .icon {
+	width: 40%;
+	margin-left: 30px;
+	display: inline-block;
+}
+
+#main .form label .icon .input:invalid {
+	border: 1px solid red;
+}
+
+#main .form label .icon .input {
+	width: 55%;
+	height: 30px;
+	border: solid thin grey;
+	background-color: white;
+	padding: 5px;
+	border-radius: 0 8px 8px 0;
+	margin-right: 0;
+	float: left;
+}
+
+#main .form label .icon select {
+	width: 58%;
+	height: 42px;
+	border: solid thin grey;
+	padding: 5px;
+	margin-right: 0;
+	float: left;
+	border-radius: 0 8px 8px 0;
+	background-color: white;
+}
+
+#main .form label .icon input[type="radio"] {
+	width: 5%;
+	height: 20px;
+	margin-right: 16px;
+}
+
+#main .form label button {
+	background-color: orange;
+	color: white;
+	border-radius: 8px;
+	border-style: none;
+	margin-left: 35%;
+	padding: 10px;
+	margin-bottom: 20px;
+}

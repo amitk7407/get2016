@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="styles/FormCSS.css" type="text/css">
+		<style>
+			#main .form .icon .fa {
+				border: solid thin grey;
+				width: 10%;
+				height: 40px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				float: left;
+				border-radius: 8px 0 0 8px;
+			}
+			
+			#main .form .fa.fa-paper-plane {
+				background-color: orange;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<h3>Contact Us Today!</h3>
+		</header>
+		<main id="main">
+			<form class="form" action="" method="post">
+				<label>
+					<div class="label_name">
+						First Name
+					</div>
+					<div class="icon">
+						<span class="fa fa-user"></span>
+						<input class="input" type="text" name="First Name" placeholder="First Name" pattern="[A-Za-z]{2,20}" required />
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						Last Name
+					</div>
+					<div class="icon">
+						<span class="fa fa-user"></span>
+						<input class="input" type="text" name="Last Name" placeholder="Last Name" pattern="[A-Za-z]{2,20}" required />
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						E-Mail
+					</div>
+					<div class="icon">
+						<span class="fa fa-envelope"></span>
+						<input class="input" type="email" name="E-Mail" placeholder="E-Mail Address" required />
+					</div>
+					</label><br />
+				<label>
+					<div class="label_name">
+						Phone #
+					</div>
+					<div class="icon">
+						<span class="fa fa-phone"></span>
+						<input class="input" type="number" name="Phone #" placeholder="(845)555-1212" minlength="10" maxlength="10" required />
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						Address
+					</div>
+					<div class="icon">
+						<span class="fa fa-home"></span>
+						<input class="input" type="text" name="Address" placeholder="Address" required />
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						City
+					</div>
+					<div class="icon">
+						<span class="fa fa-home"></span>
+						<input type="text" class="input" name="City" placeholder="city" required />
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						State
+					</div>
+					<div class="icon">
+						<span class="fa fa-list"></span>
+						<select name="State">
+							<option>Please select your state</option>
+							<option>Andhra Pradesh</option>
+							<option>Assam</option>
+							<option>Bihar</option>
+							<option>Chhattisgarh</option>
+							<option>Delhi</option>
+							<option>Goa</option>
+							<option>Haryana</option>
+							<option>Jammu and Kashmir</option>
+							<option>Jharkhand</option>
+							<option>Karnataka</option>
+							<option>Kerala</option>
+							<option>Maharashtra</option>
+							<option>Meghalaya</option>
+							<option>Nagaland</option>
+							<option>Odisha</option>
+							<option>Punjab</option>
+							<option>Rajasthan</option>
+							<option>Sikkim</option>
+							<option>Tamil Nadu</option>
+							<option>Telangana</option>
+							<option>Uttar Pradesh</option>
+							<option>West Bengal</option>
+						</select>
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						Zip Code
+					</div>
+					<div class="icon">
+						<span class="fa fa-home"></span>
+						<input class="input" type="number" name="Zip Code" placeholder="Zip Code" minlength="6" maxlength="6" required />
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						Website or domain name
+					</div>
+					<div class="icon">
+						<span class="fa fa-globe"></span>
+						<input type="text" class="input" name="Website or domain name" placeholder="Website or domain name" required />
+					</div>
+				</label><br />
+				<label>
+					<div class="label_name">
+						Do you have hosting?
+					</div>
+					<div class="icon">
+						<input type="radio" name="Do you have hosting?" value="Yes" checked />Yes<br />
+						<input type="radio" name="Do you have hosting?" value="Yes" />No
+					</div>
+				</label><br /><br />
+				<label>
+					<div class="label_name">
+						Project Description
+					</div>
+					<div class="icon">
+						<span class="fa fa-pencil"></span>
+						<textarea name="Project Description" class="input" placeholder="Project Description" required ></textarea>
+					</div>
+				</label><br /><br />
+				<label>
+					<button type="submit" name="submit" >Send <span class="fa fa-paper-plane"></span></button>
+				</label></br>
+				<div class="clear"></div>
+			</form>
+		</main>
+		<footer></footer>
+	</body>
+</html>
