@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dropdown and Radio combinations</title>
+		<script src = "javascripts/radioDropdownCombinations.js"></script>
+	</head>
+	<body>
+		State: 
+		<select>
+			<option>Rajasthan</option>
+			<option>Punjab</option>
+			<option>Bihar</option>
+			<option>Assam</option>
+		</select><br/><br/>
+		
+		Country : 
+		<select>
+			<option>India</option>
+			<option>China</option>
+			<option>Japan</option>
+			<option>Nepal</option>
+		</select><br/><br/>
+		
+		Choose : <br />
+		<label><input type ="radio" value="state" name="group"/>State<br /></label>
+		<label><input type="radio" value="Country" name="group"/>Country<br/><br/></label>
+		<button onclick="radioDropdownCombinations()">Click to the output according to radio</button>
+		<p id = "msg"></p>
+	</body>
+</html>
