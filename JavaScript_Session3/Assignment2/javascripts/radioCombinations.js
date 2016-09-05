@@ -2,7 +2,7 @@ function radioCombinations() {
 
 	var grp1 = document.getElementsByName("group1");
 	var grp2 = document.getElementsByName("group2");
-	var para = document.getElementById("para");
+	var msg = document.getElementById("msg");
 	var i = 0;
 	var j = 0;
 	
@@ -22,5 +22,5 @@ function radioCombinations() {
 		}
 	}
 	
-		para.innerHTML = grp1[i].value + " " + grp2[j].value;
+		msg.innerHTML = grp1[i].value + " " + grp2[j].value;
 }
