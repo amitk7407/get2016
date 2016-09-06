@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h2, h3, h4, h5, h6, span, p {
+	
+	width: 200px;
+	border: solid grey 1px;
+	color: black;
+	display: block;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+}
+
+button {
+	
+	padding: 10px;
+	margin: 10px;
+}
