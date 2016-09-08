@@ -1,0 +1,74 @@
+{
+	"0":{
+			"firstName": "Amit",
+			"lastName": "Kumar",
+			"email": "amit.kumar@metacube.com",
+			"dob": "08-03-1995",
+			"address": {
+				"streetAddress": "Sector 10, Pratap Nagar",
+				"city": "Jaipur",
+				"state": "Rajasthan",
+				"postalCode": "302033"
+			}
+	},
+	"1":{
+			"firstName": "Manav",
+			"lastName": "Bhattacharya",
+			"email": "manav.bhattacharya@metacube.com",
+			"dob": "08-10-1991",
+			"address": {
+				"streetAddress": "Sector 10, Pratap Nagar",
+				"city": "Jaipur",
+				"state": "Rajasthan",
+				"postalCode": "302033"
+			}
+	},
+	"2":{
+			"firstName": "Ashish",
+			"lastName": "Kumar",
+			"email": "ashish.kumar@metacube.com",
+			"dob": "03-03-1993",
+			"address": {
+				"streetAddress": "Sector 10, Pratap Nagar",
+				"city": "Jaipur",
+				"state": "Rajasthan",
+				"postalCode": "302033"
+			}
+	},
+	"3":{
+			"firstName": "Vaibhav",
+			"lastName": "Zambad",
+			"email": "vaibhav.zambad@metacube.com",
+			"dob": "21-06-1994",
+			"address": {
+				"streetAddress": "Sector 3, Haldi Ghati",
+				"city": "Jaipur",
+				"state": "Rajasthan",
+				"postalCode": "302022"
+			}
+	},
+	"4":{
+			"firstName": "Avinash",
+			"lastName": "Chopra",
+			"email": "avinash.chopra@metacube.com",
+			"dob": "02-08-1994",
+			"address": {
+				"streetAddress": "Sector 6, Mansarovar",
+				"city": "Jaipur",
+				"state": "Rajasthan",
+				"postalCode": "302012"
+			}
+	},
+	"5":{
+			"firstName": "Md. Noor",
+			"lastName": "Alam",
+			"email": "mdnoor.alam@metacube.com",
+			"dob": "11-05-1993",
+			"address": {
+				"streetAddress": "Sector 8, Pratap Nagar",
+				"city": "Jaipur",
+				"state": "Rajasthan",
+				"postalCode": "302033"
+			}
+	}
+}
