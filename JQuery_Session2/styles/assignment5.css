@@ -1,0 +1,14 @@
+#carousel {
+	
+	width:1100px;
+	height:500px;
+	position:relative;
+	border:1px solid #222;
+}
+
+#carousel img {
+	
+	width: 700px;
+	height: 400px;
+	cursor: pointer; /* not needed if you wrap carousel items in links */
+}

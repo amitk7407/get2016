@@ -1,0 +1,34 @@
+label{
+	margin: 0 50px;
+}
+
+.label_name {
+	width: 30%;
+	text-align: right;
+	font-weight: bold;
+	font-size: 18px;
+	float: left;
+	padding-top: 10px;
+	margin: 20px;
+}
+	
+.input {
+	width: 35%;
+	height: 30px;
+	border: solid thin grey;
+	background-color: white;
+	padding: 5px;
+	margin-right: 0;
+	float: left;
+	margin: 20px;
+}
+
+.result {
+	width: 35%;
+	background-color: white;
+	padding: 5px;
+	margin-right: 0;
+	float: left;
+	margin: 20px;
+	font-size: 14px;
+}
