@@ -1,0 +1,143 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a, a:link, a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+.container {
+  position: relative;
+}
+
+.jumbotron a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.jumbotron .glyphicon.glyphicon-user {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100px;
+}
+
+.jumbotron .glyphicon.glyphicon-menu-hamburger {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.jumbotron.header {
+	background-color: #c66;
+	font-size: 40px;
+	margin-bottom: 0;
+}
+
+body div div button span {
+	color: #fff;
+}
+
+nav .container #navbar ul li:hover {
+	background-color: #c66;
+}
+
+#dashboard .top_color {
+	color: #f66;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#dashboard .top_color hr {
+	background-color: #f66;
+	height: 2px;
+}
+
+.backgroundColor-yellow {
+	background-color: #aa0;
+}
+
+.backgroundColor-lightYellow {
+	background-color: #aa0;
+}
+
+.backgroundColor-red {
+	background-color: #d52;
+}
+
+.backgroundColor-lightGreen {
+	background-color: #0d0;
+}
+
+.backgroundColor-darkGreen {
+	background-color: #586;
+}
+
+.backgroundColor-pink {
+	background-color: #d3a;	
+}
+
+.backgroundColor-blue {
+	background-color: #26a;
+}
+
+.backgroundColor-cyan {
+	background-color: #0dd;
+}
+
+.backgroundColor-teal {
+	background-color: #055;
+}
+
+.textColor-white {
+	color: #fff;
+}
+
+.span_padding {
+	padding: 5px;
+	margin: 2px;
+}
+
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-bell,
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-camera,
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-heart,
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-volume-up {
+	font-size: 40px;
+}
+
+.container#dashboard .row .panel .panel-body .glyphicon.glyphicon-align-left,
+.container#dashboard .row .panel .panel-body .glyphicon.glyphicon-info-sign,
+.container#dashboard .row .panel .panel-body .glyphicon.glyphicon-comment,
+.container#dashboard .row .panel .panel-body .glyphicon.glyphicon-edit {
+	border: solid thin #999;
+	padding: 3px;
+	margin-right: 5px;
+}
+
+.buttonPadding {
+	margin-top: 0;
+	padding: 5px;
+}
+
+.container .row .panel .panel-heading.panel-head {
+	height: 55px;
+}
+
+.color-black {
+	color: #000;
+}
+
+.footer-button {
+	width: 100%;
+}
+
+.footer {
+	background-color: #c66;
+	padding: 20px;
+	color: #fff;
+	margin-top: 40px;
+}
