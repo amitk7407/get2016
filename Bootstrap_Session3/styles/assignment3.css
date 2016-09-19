@@ -1,0 +1,199 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a, a:link, a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+.container {
+  position: relative;
+}
+
+.jumbotron a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.jumbotron .glyphicon.glyphicon-menu-hamburger {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2vh;
+}
+
+.jumbotron.header {
+	background-color: #c36464;
+	font-size: 5vh;
+	margin-bottom: 0;
+	padding: 10vh 0 10vh 0;
+}
+
+.jumbotron .img-circle {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20vh;
+	width: 10vh;
+	height: 10vh;
+	background: #f0677c;
+	
+	color: #fff;
+}
+
+#notification {
+    background-color: #b9b739;
+	color: #fff;
+	border-radius: 10px;
+}
+
+#photogallery {
+    background-color: #f94c4c;
+	color: #fff;
+	border-radius: 10px;
+}
+
+#favourites {
+    background-color: #119c7e;
+	color: #fff;
+	border-radius: 10px;
+}
+
+#announcements {
+    background-color: #b739b9;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.container .row .panel .img-circle {
+    width: 10vh;
+    height: 10vh;
+    border: 2px solid white;
+	padding: 2vh;
+}
+
+body div div button span {
+	color: #fff;
+}
+
+nav .container #navbar ul li:hover, nav .container #navbar ul li.active a {
+	background-color: #c36464;
+}
+
+#dashboard .top_color {
+	color: #f66;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#dashboard .top_color hr {
+	background-color: #f66;
+	height: 2px;
+}
+
+.facebook {
+	background-color: #6279a7;
+}
+
+.google_plus {
+	background-color: #cf573a;
+}
+
+.twitter {
+	background-color: #33bbeb;
+}
+
+.linkedin {
+	background-color: #3e90b4;
+}
+
+.span_padding {
+	padding: 5px;
+	margin: 2px;
+}
+
+.jumbotron .container .glyphicon.glyphicon-user,
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-bell,
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-camera,
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-heart,
+.container#dashboard .row .panel .panel-heading .glyphicon.glyphicon-volume-up {
+	font-size: 5vh;
+}
+
+.glyphicon.glyphicon-align-left, .glyphicon.glyphicon-info-sign,
+.glyphicon.glyphicon-comment, .glyphicon.glyphicon-edit {
+	border: solid thin #999;
+	padding: 3px;
+	margin-right: 5px;
+}
+
+.buttonPadding {
+	margin-top: 0;
+	padding: 5px;
+}
+
+.container .row .panel .panel-heading.panel-head {
+	height: 55px;
+}
+
+.footer-button {
+	width: 100%;
+}
+
+.footer {
+	background-color: #c36464;
+	padding: 20px;
+	color: #fff;
+	margin-top: 40px;
+}
+
+.modal .modal-dialog .modal-content .notification-header {
+	 background-color: #b9b739;
+}
+
+.modal .modal-dialog .modal-content .carousel .modal-body .panel .panel-heading.panel-color {
+	background-color: #009788;
+}
+
+.modal .modal-dialog .modal-content .close_design {
+	position:relative;
+	opacity: 1;
+	top: -20px;
+	right: -20px;
+	border-radius: 10px;
+	border:1px solid white;
+	width: 20px;
+	background-color:white;
+}
+
+.carousel-control.left, .carousel-control.right {
+ 	background-image:none;
+	color: #999;
+}
+
+.modal .modal-dialog .modal-content #myCarousel.carousel .modal-body .carousel-inner .item .carousel-inner-body {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.carousel-control {
+	width: 10%;
+	margin: 0 0 0 0;
+}
+
+.carousel-indicators li {
+  background-color: #999;
+  position:relative;
+  top:20px;
+}
+
+.carousel-indicators .active {
+  background-color: #444;
+}
+
+.carousel-inner-body .nav li.active a {
+	color: black !important;
+}
