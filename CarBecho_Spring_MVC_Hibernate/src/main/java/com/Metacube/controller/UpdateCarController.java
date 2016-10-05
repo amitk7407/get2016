@@ -19,22 +19,37 @@ import com.Metacube.service.CarServiceImpl;
 public class UpdateCarController {
 
 	private CarServiceImpl carServiceImpl;
-	
 	private CarVO carVO;
 	
+	/**
+	 * method to get CarServiceImpl object
+	 * @return : CarServiceImpl object
+	 */
 	public CarServiceImpl getCarServiceImpl() {
 		return carServiceImpl;
 	}
 	
+	/**
+	 * method to set CarServiceImpl object
+	 * @param carServiceImpl
+	 */
 	@Autowired(required=true)
 	public void setCarServiceImpl(CarServiceImpl carServiceImpl) {
 		this.carServiceImpl = carServiceImpl;
 	}
 
+	/**
+	 * method to get CarVO object
+	 * @return : CraVO object
+	 */
 	public CarVO getCarVO() {
 		return carVO;
 	}
 	
+	/**
+	 * method to set CarVO object
+	 * @param carVO
+	 */
 	@Autowired(required=true)
 	public void setCarVO(CarVO carVO) {
 		this.carVO = carVO;

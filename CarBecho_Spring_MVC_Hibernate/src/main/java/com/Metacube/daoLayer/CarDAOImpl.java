@@ -16,13 +16,20 @@ import com.Metacube.model.CarVO;
 @Repository
 public class CarDAOImpl{
 	
-	
 	private SessionFactory sessionFactory;
 
+	/**
+	 * method to get SessionFactory object
+	 * @return : SessionFactory object
+	 */
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
 	
+	/**
+	 * method to set SessionFactory object
+	 * @param sessionFactory
+	 */
 	@Autowired(required=true)
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
@@ -44,7 +51,6 @@ public class CarDAOImpl{
 	/**
 	 * method to update the car details
 	 * @param car : CarVO object whose data is to be updated
-	 * @return : Boolean
 	 */
 	public void updateCarDAO(CarVO carVO) {
 
@@ -56,7 +62,6 @@ public class CarDAOImpl{
 	/**
 	 * method to execute the query to add the car details in the database
 	 * @param car : CarVO object from which car details to be added in database
-	 * @return : Boolean to indicate the success of the process
 	 */
 	public void addCarDAO(CarVO carVO) {
 
@@ -68,7 +73,7 @@ public class CarDAOImpl{
 	/**
 	 * method to find the car from the database
 	 * @param car : CarVO object which is to be deleted
-	 * @return : Boolean
+	 * @return : CarVO object
 	 */
 	@SuppressWarnings("unchecked")
 	public CarVO findCarDAO(String companyName, String modelName) {

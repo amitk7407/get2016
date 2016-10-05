@@ -20,10 +20,18 @@ public class ViewCarController {
 	
 	private CarServiceImpl carServiceImpl;
 
+	/**
+	 * method to set CarServiceImpl object
+	 * @return : CarServiceImpl object
+	 */
 	public CarServiceImpl getCarServiceImpl() {
 		return carServiceImpl;
 	}
 	
+	/**
+	 * method to set CarServiceImpl object
+	 * @param carServiceImpl
+	 */
 	@Autowired(required=true)
 	public void setCarServiceImpl(CarServiceImpl carServiceImpl) {
 		this.carServiceImpl = carServiceImpl;

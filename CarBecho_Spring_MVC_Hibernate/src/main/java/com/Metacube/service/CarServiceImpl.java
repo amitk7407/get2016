@@ -10,7 +10,7 @@ import com.Metacube.daoLayer.CarDAOImpl;
 import com.Metacube.model.CarVO;
 
 /**
- * Facade Class to serve as Model
+ * Service Class
  * This class interact with DAO classes
  */
 @Service
@@ -18,10 +18,18 @@ public class CarServiceImpl{
 
 	private CarDAOImpl carDAOImpl;
 
+	/**
+	 * method to get CarDAOImpl object
+	 * @return : CarDAOImpl object
+	 */
 	public CarDAOImpl getCarDAOImpl() {
 		return carDAOImpl;
 	}
 
+	/**
+	 * method to set CarDAOImpl object
+	 * @param carDAOImpl
+	 */
 	@Autowired(required=true)
 	public void setCarDAOImpl(CarDAOImpl carDAOImpl) {
 		this.carDAOImpl = carDAOImpl;
