@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<employees>
+  <employee id="101">
+    <firstName>Amit</firstName>
+    <lastName>Kumar</lastName>
+    <location>Jaipur</location>
+  </employee>
+  <employee id="102">
+    <firstName>Vaibhav</firstName>
+    <lastName>Zambad</lastName>
+    <location>Jaipur</location>
+  </employee>
+  <employee id="103">
+    <firstName>Ajinkya</firstName>
+    <lastName>Pande</lastName>
+    <location>Jaipur</location>
+  </employee>
+</employees>
