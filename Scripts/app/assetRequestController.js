@@ -1,32 +1,34 @@
-﻿// this controller call the api method and display the list of employees in list.html  
-EmpApp.controller("ListRequestController", ['$scope', '$http',
+﻿// this controller call the api method and display the list of requests in listrequest.cshtml  
+RequestApp.controller("ListRequestController", ['$scope', '$http',
     function ($scope, $http) {
-        $http.get('/api/assetrequest').success(function (data) {
-            $scope.employees = data;
+        $http.get('/api/assetrequests').success(function (data) {
+            $scope.requests = data;
+        }).error(function (data) {
+            $scope.error = "An error has occured while getting requests! " + data;
         });
     }
 ]);
 
-// this controller call the api method and display the record of selected employee  
-// in delete.html and provide an option for delete  
-EmpApp.controller("DeleteRequestController", ['$scope', '$http', '$routeParams', '$location',
+// this controller call the api method and display the record of selected request
+// in deleterequest.cshtml and provide an option for delete  
+RequestApp.controller("DeleteRequestController", ['$scope', '$http', '$routeParams', '$location',
     function ($scope, $http, $routeParams, $location) {
         $scope.id = $routeParams.id;
-        $http.get('/api/assetrequest/' + $routeParams.id).success(function (data) {
-            $scope.RequestId = data.RequestId;
-            $scope.RequestorName = data.RequestorName;
-            $scope.AssetName = data.AssetName;
-            $scope.StartDate = data.StartDate;
-            $scope.EndDate = data.EndDate;
-            $scope.RoomName = data.RoomName;
-            $scope.BuildingName = data.Building;
-            $scope.SiteName = data.SiteName;
-            $scope.Country = data.Country;
+        $http.get('/api/assetrequests/' + $scope.id).success(function (data) {
+            //$scope.requestid = data.AssetRequestId;
+            $scope.requestname = data.AssetRequestName;
+            $scope.assetname = data.AssetName;
+            $scope.roomname = data.RoomName;
+            $scope.buildingname = data.BuildingName;
+            $scope.sitename = data.SiteName;
+            $scope.country = data.Country;
             $scope.state = data.State;
             $scope.active = data.IsActive;
+        }).error(function (data) {
+            $scope.error = "An error has occured while fetching request! " + data;
         });
         $scope.delete = function () {
-            $http.delete('/api/assetrequest/' + $scope.id).success(function (data) {
+            $http.delete('/api/assetrequests/' + $scope.id).success(function (data) {
                 $location.path('/request/list');
             }).error(function (data) {
                 $scope.error = "An error has occured while deleting request! " + data;
@@ -35,58 +37,60 @@ EmpApp.controller("DeleteRequestController", ['$scope', '$http', '$routeParams',
     }
 ]);
 
-// this controller call the api method and display the record of selected employee  
-// in edit.html and provide an option for create and modify the employee and save the employee record  
-EmpApp.controller("EditRequestController", ['$scope', '$filter', '$http', '$routeParams', '$location',
+// this controller call the api method and display the record of selected request
+// in editrequest.cshtml and provide an option for create and modify the request and save the request record  
+RequestApp.controller("EditRequestController", ['$scope', '$filter', '$http', '$routeParams', '$location',
     function ($scope, $filter, $http, $routeParams, $location) {
         $scope.id = 0;
         $scope.save = function () {
             var obj = {
-                RequestId : $scope.requestid,
-                RequestorName : $scope.requestorname,
-                AssetName : $scope.assetname,
-                StartDate : $scope.startdate,
-                EndDate : $scope.enddate,
-                RoomName : $scope.roomname,
-                BuildingName : $scope.buildingname,
-                SiteName : $scope.sitename,
-                Country : $scope.country,
-                State : $scope.state,
-                IsActive : $scope.active
+                AssetRequestId: $scope.requestid,
+                AssetRequestName: $scope.requestname,
+                AssetName: $scope.assetname,
+                RoomName: $scope.roomname,
+                BuildingName: $scope.buildingname,
+                SiteName: $scope.sitename,
+                Country: $scope.country,
+                State: $scope.state,
+                IsActive: $scope.active
             };
             if ($scope.id == 0) {
-                $http.post('/api/Employee/', obj).success(function (data) {
+                $http.post('/api/assetrequests/', obj).success(function (data) {
                     $location.path('/request/list');
                 }).error(function (data) {
                     $scope.error = "An error has occured while adding request! " + data.ExceptionMessage;
                 });
             }
             else {
-                $http.put('/api/Employee/', obj).success(function (data) {
-                    $location.path('/list');
+                $http.put('/api/assetrequests/', obj).success(function (data) {
+                    $location.path('/request/list');
                 }).error(function (data) {
                     console.log(data);
-                    $scope.error = "An Error has occured while Saving customer! " + data.ExceptionMessage;
+                    $scope.error = "An Error has occured while Saving request! " + data.ExceptionMessage;
                 });
             }
         }
         if ($routeParams.id) {
             $scope.id = $routeParams.id;
-            $scope.title = "Edit Employee";
-            $http.get('/api/assetrequest/' + $routeParams.id).success(function (data) {
-                $scope.firstname = data.FirstName;
-                $scope.lastname = data.LastName;
+            $scope.title = "Edit Request";
+            $http.get('/api/assetrequests/' + $routeParams.id).success(function (data) {
+                $scope.requestid = data.requestId;
+                $scope.requestname = data.requestName;
+                $scope.assetname = data.AssetName;
+                $scope.roomname = data.RoomName;
+                $scope.buildingname = data.BuildingName;
+                $scope.sitename = data.SiteName;
                 $scope.country = data.Country;
                 $scope.state = data.State;
-                $scope.salary = data.Salary;
                 $scope.active = data.IsActive;
-                $scope.description = data.Description;
-                $scope.dob = new Date(data.DateofBirth);
-                $scope.getStates();
+                $scope.displayRequestId = "";
+                $scope.disabled = "disabled";
             });
         }
         else {
-            $scope.title = "Create New Employee";
+            $scope.title = "Create New Request";
+            $scope.displayRequestId = "none";
+            $scope.disabled = "";
         }
     }
 ]);

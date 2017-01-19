@@ -1,7 +1,7 @@
 ﻿// this controller call the api method and display the list of sites in listsite.cshtml  
 RequestApp.controller("ListSiteController", ['$scope', '$http',
     function ($scope, $http) {
-        $http.get('/api/site').success(function (data) {
+        $http.get('/api/sites').success(function (data) {
             $scope.sites = data;
         }).error(function (data) {
             $scope.error = "An error has occured while getting sites! " + data;
@@ -14,7 +14,7 @@ RequestApp.controller("ListSiteController", ['$scope', '$http',
 RequestApp.controller("DeleteSiteController", ['$scope', '$http', '$routeParams', '$location',
     function ($scope, $http, $routeParams, $location) {
         $scope.id = $routeParams.id;
-        $http.get('/api/site/' + $scope.id).success(function (data) {
+        $http.get('/api/sites/' + $scope.id).success(function (data) {
             //$scope.siteid = data.SiteId;
             $scope.sitename = data.SiteName;
             $scope.country = data.Country;
@@ -24,8 +24,8 @@ RequestApp.controller("DeleteSiteController", ['$scope', '$http', '$routeParams'
             $scope.error = "An error has occured while fetching site! " + data;
         });
         $scope.delete = function () {
-            $http.delete('/api/site/' + $scope.id).success(function (data) {
-                $location.path('/request/list');
+            $http.delete('/api/sites/' + $scope.id).success(function (data) {
+                $location.path('/site/list');
             }).error(function (data) {
                 $scope.error = "An error has occured while deleting site! " + data;
             });
@@ -47,14 +47,14 @@ RequestApp.controller("EditSiteController", ['$scope', '$filter', '$http', '$rou
                 IsActive: $scope.active
             };
             if ($scope.id == 0) {
-                $http.post('/api/site/', obj).success(function (data) {
+                $http.post('/api/sites/', obj).success(function (data) {
                     $location.path('/site/list');
                 }).error(function (data) {
                     $scope.error = "An error has occured while adding site! " + data.ExceptionMessage;
                 });
             }
             else {
-                $http.put('/api/site/', obj).success(function (data) {
+                $http.put('/api/sites/', obj).success(function (data) {
                     $location.path('/site/list');
                 }).error(function (data) {
                     console.log(data);
@@ -65,19 +65,19 @@ RequestApp.controller("EditSiteController", ['$scope', '$filter', '$http', '$rou
         if ($routeParams.id) {
             $scope.id = $routeParams.id;
             $scope.title = "Edit Site";
-            $http.get('/api/site/' + $routeParams.id).success(function (data) {
+            $http.get('/api/sites/' + $routeParams.id).success(function (data) {
                 $scope.siteid = data.SiteId;
                 $scope.sitename = data.SiteName;
                 $scope.country = data.Country;
                 $scope.state = data.State;
                 $scope.active = data.IsActive;
-                $scope.displayRequestId = "";
+                $scope.displaySiteId = "";
                 $scope.disabled = "disabled";
             });
         }
         else {
-            $scope.title = "Create New Employee";
-            $scope.displayRequestId = "none";
+            $scope.title = "Create New Site";
+            $scope.displaySiteId = "none";
             $scope.disabled = "";
         }
     }
