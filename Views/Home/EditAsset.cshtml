@@ -1,0 +1,58 @@
+﻿<h3>
+    {{ title }}
+</h3>
+<hr />
+<form role="form" style="max-width: 500px;">
+    <strong class="error">{{ error }}</strong>
+    <div class="form-group" style="display:{{displaySiteId}}">
+        <label for="assetid">
+            Asset Id:
+        </label>
+        <input type="text" class="form-control" id="assetid" ng-model="assetid" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="assetname">
+            Asset Name:
+        </label>
+        <input type="text" class="form-control" id="assetname" ng-model="assetname" />
+    </div>
+    <div class="form-group">
+        <label for="roomname">
+            Room Name:
+        </label>
+        <input type="text" class="form-control" id="roomname" ng-model="roomname" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="buildingname">
+            Building Name
+        </label>
+        <input type="text" class="form-control" id="buildingname" ng-model="buildingname" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="sitename">
+            Site Name:
+        </label>
+        <input type="text" class="form-control" id="sitename" ng-model="sitename" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="country">
+            Country:
+        </label>
+        <input type="text" class="form-control" id="country" ng-model="country" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="state">
+            State:
+        </label>
+        <input type="text" class="form-control" id="state" ng-model="state" {{disabled}} />
+    </div>
+    <div class="form-group checkbox">
+        <label>
+            <input type="checkbox" ng-model="active" />Active
+        </label>
+    </div>
+    <a href="#/asset/list" class="btn btn-info">Back to List</a>
+    <button type="submit" class="btn btn-default" ng-click="saveRoom()">
+        Submit
+    </button>
+</form> 

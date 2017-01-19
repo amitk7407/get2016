@@ -1,0 +1,46 @@
+﻿<h3>
+    {{ title }}
+</h3>
+<hr />
+<form role="form" style="max-width: 500px;">
+    <strong class="error">{{ error }}</strong>
+    <div class="form-group" style="display:{{displayRequestId}}">
+        <label for="buildingid">
+            Building Id:
+        </label>
+        <input type="text" class="form-control" id="buildingid" ng-model="buildingid" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="buildingname">
+            Building Name:
+        </label>
+        <input type="text" class="form-control" id="buildingname" ng-model="buildingname" />
+    </div>
+    <div class="form-group">
+        <label for="sitename">
+            Site Name:
+        </label>
+        <input type="text" class="form-control" id="sitename" ng-model="sitename" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="country">
+            Country:
+        </label>
+        <input type="text" class="form-control" id="country" ng-model="country" {{disabled}} />
+    </div>
+    <div class="form-group">
+        <label for="state">
+            State:
+        </label>
+        <input type="text" class="form-control" id="state" ng-model="state" {{disabled}} />
+    </div>
+    <div class="form-group checkbox">
+        <label>
+            <input type="checkbox" ng-model="active" />Active
+        </label>
+    </div>
+    <a href="#/building/list" class="btn btn-info">Back to List</a>
+    <button type="submit" class="btn btn-default" ng-click="saveBuilding()">
+        Submit
+    </button>
+</form> 
